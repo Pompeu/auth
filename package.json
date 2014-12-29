@@ -1,0 +1,21 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "^2.1.0",
+    "body-parser": "^1.10.0",
+    "client-sessions": "^0.7.0",
+    "csurf": "^1.6.3",
+    "express": "^4.10.6",
+    "jade": "^1.8.2",
+    "mongoose": "^3.8.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
