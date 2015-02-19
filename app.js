@@ -1,9 +1,12 @@
 var express = require("express");
+var https = require('https');
+var http = require('http');
+var  fs  =require('fs');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var sessions = require('client-sessions');
 var bcrypt = require('bcryptjs');
-var csrf = require('csurf')
+var csrf = require('csurf');
 var app = express();
 
 var  Schema =  mongoose.Schema;
@@ -31,7 +34,7 @@ app.use(sessions({
 	duration : 7 * 60 * 1000,
 	activeDuration: 5 * 60 * 1000,
 	httpOnly: true, //navegador nunca acesse meus cookies
-	secure: true, //cookier samento https
+	secure: true, //cookies samente https
 	ephemeral: true, //deletar cookie quando nevagador fechar
 
 }));
@@ -119,4 +122,11 @@ app.get('/',function(req, res) {
 	res.render('index.jade');
 });
 
-app.listen(3000);
+var options = {
+ 	key: fs.readFileSync('agent2-key.pem'),
+  cert: fs.readFileSync('agent2-cert.pem')
+};
+
+http.createServer(app).listen(8080);
+https.createServer(options, app).listen(3000);
+

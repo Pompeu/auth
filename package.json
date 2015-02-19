@@ -8,9 +8,10 @@
     "body-parser": "^1.10.0",
     "client-sessions": "^0.7.0",
     "csurf": "^1.6.3",
+    "e": "0.0.4",
     "express": "^4.10.6",
     "jade": "^1.8.2",
-    "mongoose": "^3.8.21"
+    "mongoose": "^3.8.23"
   },
   "devDependencies": {},
   "scripts": {
